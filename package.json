@@ -1,0 +1,36 @@
+{
+  "name": "rxjs-marble-test-example",
+  "version": "0.0.0",
+  "description": "An example project with marble tests for RxJS.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericponto/rxjs-marble-test-example.git"
+  },
+  "author": "Eric Ponto",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.6.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "babelify": "^7.2.0",
+    "browserify": "12.0.1",
+    "live-server": "^0.9.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^1.4.0",
+    "watchify": "^3.6.1",
+    "node-qunit-phantomjs": "^1.5.0",
+    "qunitjs": "^2.1.0"
+  },
+  "scripts": {
+    "build": "mkdirp js && browserify src/app.js -t babelify --outfile js/app.js",
+    "build-test": "mkdirp js && browserify tests/tests.js -t babelify --outfile js/tests.js",
+    "watch:js": "mkdirp js && watchify src/app.js -t babelify --outfile js/app.js -dv",
+    "serve": "live-server ./",
+    "start": "npm-run-all --parallel watch:js serve",
+    "test": "npm run build-test && node-qunit-phantomjs tests/tests.html"
+  },
+  "dependencies": {
+    "morphdom": "^2.2.1",
+    "rxjs": "^5.0.0-rc.5"
+  }
+}
