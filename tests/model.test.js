@@ -7,9 +7,9 @@ test("Test Model", (assert) => {
 	const testScheduler = new TestScheduler(assert.deepEqual.bind(assert));
 
 	// mock streams
-	const upMarbles   = "--x----x--x---|";
-	const downMarbles = "----x-------x-|";
-	const expected    = "a-b-a--b--c-b-|";
+	const upMarbles   = "--x----x--x---";
+	const downMarbles = "----x-------x-";
+	const expected    = "a-b-a--b--c-b-";
 	
 	const expectedStateMap = {
 		a: {count: 0},

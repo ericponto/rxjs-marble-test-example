@@ -10,6 +10,6 @@ Runs and opens the app on [http://localhost:8080](http://localhost:8080).
 
 Runs the tests via the command line.
 
-### `npm run build-tests`
+### `npm run build-test`
 
 Builds the tests.js file, then you can open `tests/tests.html` in your browser to run the tests.
